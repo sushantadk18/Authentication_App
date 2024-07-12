@@ -15,7 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ForgotPasssword_Page extends AppCompatActivity {
+public class ForgotPassword_Page extends AppCompatActivity {
     EditText email;
     Button resetPassword;
     TextView backToLogin;
@@ -37,7 +37,7 @@ public class ForgotPasssword_Page extends AppCompatActivity {
                 String Email = email.getText().toString().trim();
 
                 if (Email.isEmpty()) {
-                    Toast.makeText(ForgotPasssword_Page.this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ForgotPassword_Page.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -45,9 +45,9 @@ public class ForgotPasssword_Page extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(ForgotPasssword_Page.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPassword_Page.this, "Password reset email sent", Toast.LENGTH_SHORT).show();
                         } else {
-                            Toast.makeText(ForgotPasssword_Page.this, "Failed to send reset email", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPassword_Page.this, "Failed to send reset email", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
@@ -57,7 +57,7 @@ public class ForgotPasssword_Page extends AppCompatActivity {
         backToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ForgotPasssword_Page.this, Login_Page.class);
+                Intent intent = new Intent(ForgotPassword_Page.this, Login_Page.class);
                 startActivity(intent);
                 finish();
             }
